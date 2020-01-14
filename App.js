@@ -1,16 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Form from './src/components/Form'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Form/>    
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    padding:10,
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
