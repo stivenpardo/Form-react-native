@@ -12,10 +12,10 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    padding:10,
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
 });

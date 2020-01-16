@@ -7,29 +7,35 @@ export default class CardComment extends Component {
     render() {
         return (
             <LinearGradient
-                colors={["#7e00e9", "#8700b4"]}
+                colors={["#7e00e9", "red"]}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
                 style={styles.cardContainer}
             >
-                <View style={styles.topScreen}>
-                    <Image
-                        style={styles.img}
-                        source={{ uri: this.props.img }}
-                    />
-                    <Text style={styles.user} > {this.props.user}</Text>
+                <View style={[styles.setection, { justifyContent: "space-between" }]}>
+                    <View style={{ flexDirection: "row", alignItems: "center", flexWrap: "wrap" }}>
+                        <Image
+                            style={styles.avatar}
+                            source={{ uri: this.props.avatar }}
+                        />
+                        <Text style={styles.user} > {this.props.user}</Text>
+                    </View>
                     <Icon style={styles.icon} name="options" size={20} color="white" />
                 </View>
-                <View style={[styles.centerScreen,]} >
+                <View style={[styles.setection,]} >
                     <Text style={styles.comment}>
                         {this.props.comment}
                     </Text>
                 </View>
-                <View style={styles.bottomScreen}>
-                    <Icon name="like" size={20} color="white" />
-                    <Text style={styles.textIcon} >178 Likes</Text>
-                    <FontAwesome name="comment" size={20} color="white" />
-                    <Text style={styles.textIcon} > 67 Comments </Text>
+                <View style={[styles.setection]}>
+                    <View style={[styles.setection]}>
+                        <FontAwesome name="thumbs-up" size={30} color="white" />
+                        <Text style={styles.textIcon} >3.000 Likes</Text>
+                    </View>
+                    <View style={[styles.setection]}>
+                        <FontAwesome name="comment" size={30} color="white" />
+                        <Text style={styles.textIcon} >3.000 Comments </Text>
+                    </View>
                 </View>
             </LinearGradient>
         )
@@ -39,59 +45,36 @@ export default class CardComment extends Component {
 const styles = StyleSheet.create({
 
     cardContainer: {
-        padding: 20,
-        margin: 10,
         width: 300,
         height: 200,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 1,
-        },
-        shadowOpacity: 0.2,
-        shadowRadius: 1.41,
         elevation: 10,
-        backgroundColor: '#8D13F7',
-        borderRadius: 15
+        borderRadius: 15,
+        padding: 20,
     },
-    img: {
+    avatar: {
         width: 40,
         height: 40,
         borderRadius: 20,
-
+        marginRight: 5
     },
     user: {
         fontWeight: 'bold',
         color: "white",
-        // marginLeft: -10,
+        fontSize: 16
     },
     comment: {
         color: 'white',
+        fontSize: 13,
+        fontStyle: 'italic'
     },
     textIcon: {
         color: "white",
-        // marginLeft: "10",
+        marginLeft: 5,
     },
-    topScreen: {
+    setection: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: "space-between",
-        alignItems: "center",
-        // backgroundColor: 'yellow'
-    },
-    centerScreen: {
-        flex: 1,
-        justifyContent: "space-around",
-        //width: '100%',
-        // backgroundColor: 'red'
-    },
-    bottomScreen: {
-        flex: 1,
-        //width: '100%',
-        flexDirection: 'row',
-        justifyContent: "space-between",
-        alignItems: "center",
-        // backgroundColor: 'pink',
+        alignItems: 'center',
     },
 
 });
