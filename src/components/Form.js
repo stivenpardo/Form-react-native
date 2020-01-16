@@ -40,8 +40,6 @@ const styles = StyleSheet.create({
 
     formContainer: {
         width:'100%',
-        // backgroundColor:'red',
-        // backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
     },

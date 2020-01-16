@@ -1,31 +1,37 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 import Icon from 'react-native-vector-icons/SimpleLineIcons';
-import {FontAwesome} from '@expo/vector-icons'
+import { FontAwesome } from '@expo/vector-icons'
+import { LinearGradient } from "expo-linear-gradient";
 export default class CardComment extends Component {
     render() {
         return (
-            <View style={styles.cardContainer}>
+            <LinearGradient
+                colors={["#7e00e9", "#8700b4"]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }}
+                style={styles.cardContainer}
+            >
                 <View style={styles.topScreen}>
                     <Image
                         style={styles.img}
                         source={{ uri: this.props.img }}
                     />
-                    <Text style={styles.user} > {this.props.user}</Text>       
+                    <Text style={styles.user} > {this.props.user}</Text>
                     <Icon style={styles.icon} name="options" size={20} color="white" />
                 </View>
-                <View style={[styles.centerScreen, ]} >
+                <View style={[styles.centerScreen,]} >
                     <Text style={styles.comment}>
                         {this.props.comment}
                     </Text>
                 </View>
                 <View style={styles.bottomScreen}>
-                    <Icon name="like" size={20} color="white" /> 
-                        <Text style={styles.textIcon} >178 Likes</Text>  
-                    <FontAwesome name="comment" size={20} color="white" />       
-                        <Text style={styles.textIcon} > 67 Comments </Text>               
+                    <Icon name="like" size={20} color="white" />
+                    <Text style={styles.textIcon} >178 Likes</Text>
+                    <FontAwesome name="comment" size={20} color="white" />
+                    <Text style={styles.textIcon} > 67 Comments </Text>
                 </View>
-            </View>
+            </LinearGradient>
         )
     }
 }
@@ -33,9 +39,9 @@ export default class CardComment extends Component {
 const styles = StyleSheet.create({
 
     cardContainer: {
-        padding:20,
+        padding: 20,
         margin: 10,
-        width:300,
+        width: 300,
         height: 200,
         shadowColor: "#000",
         shadowOffset: {
@@ -49,22 +55,22 @@ const styles = StyleSheet.create({
         borderRadius: 15
     },
     img: {
-        width: 35,
-        height: 35,
-        borderRadius: 40,
-        
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+
     },
     user: {
         fontWeight: 'bold',
         color: "white",
-        marginLeft: -10,
+        // marginLeft: -10,
     },
     comment: {
         color: 'white',
-        
     },
     textIcon: {
-        color: "white",     
+        color: "white",
+        // marginLeft: "10",
     },
     topScreen: {
         flex: 1,
